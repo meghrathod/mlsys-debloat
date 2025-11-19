@@ -1,0 +1,3 @@
+[submodule "negativa-ml"]
+	path = negativa-ml
+	url = https://github.com/meghrathod/negativa-ml.git
