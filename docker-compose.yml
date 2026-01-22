@@ -15,6 +15,13 @@ services:
       - NVIDIA_DRIVER_CAPABILITIES=compute,utility
     volumes:
       - .:/home/jovyan/work
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
     working_dir: /home/jovyan/work
     command: start-notebook.sh --NotebookApp.ip='0.0.0.0'
     stdin_open: true

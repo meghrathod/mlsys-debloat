@@ -23,7 +23,7 @@ RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y && \
     chmod -R u+w /home/jovyan/.cargo
 
 # Set up environment variables
-ENV PATH="/home/jovyan/.cargo/bin:${PATH}"
+ENV PATH="/usr/local/cuda/bin:/home/jovyan/.cargo/bin:${PATH}"
 ENV LD_LIBRARY_PATH="/usr/local/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64:/usr/local/nvidia/lib64:/usr/lib/x86_64-linux-gnu:${LD_LIBRARY_PATH}"
 ENV LIBRARY_PATH="/usr/local/cuda/lib64:/usr/local/cuda/lib64/stubs:/usr/local/nvidia/lib64:/usr/lib/x86_64-linux-gnu:${LIBRARY_PATH}"
 ENV RUSTFLAGS="-L /usr/local/cuda/lib64 -L /usr/local/cuda/lib64/stubs -L /usr/lib/x86_64-linux-gnu"
